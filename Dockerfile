@@ -1,4 +1,5 @@
-FROM amazoncorretto:11-alpine-jdk
-MAINTAINER MGB
-COPY target/mgb-0.0.1-SNAPSHOT.jar  mgb-app.jar
-ENTRYPOINT ["java","-jar","/mgb-app.jar"]
+FROM eclipse-temurin:17-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
