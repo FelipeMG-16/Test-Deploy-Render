@@ -1,4 +1,4 @@
-FROM azul/zulu-openjdk:17
+FROM openjdk:17-oracle
 VOLUME /tmp
 COPY build/libs/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
